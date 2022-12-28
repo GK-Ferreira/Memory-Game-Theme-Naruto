@@ -1,0 +1,81 @@
+main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(../images/hidden\ village.png);
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px 50px;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 700px;
+    padding: 30px;
+    margin: 0 0 30px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255,0.8);
+    font-size: 1em;
+}
+
+.grid{
+    display: grid;
+    width: 100%;
+    max-width: 700px;
+    grid-template-columns: repeat(5,1fr);
+    gap: 15px;
+    margin: 0 auto;
+}
+.card{
+    background-color: #ccc;
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: 5px;
+    position: relative;
+    transition: all 400ms ease;
+    transform-style: preserve-3d;
+}
+.face{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center;
+}
+.front{
+    border: 2px solid #e62222;
+    transform: rotateY(180deg);
+}
+.back{
+    background-image: url(../images/capa.jpeg);
+    backface-visibility: hidden;
+}
+.revealCard{
+    transform: rotateY(180deg);
+}
+.disabledCard{
+    filter: saturate(0);
+    opacity: 0.9;
+}
+@media screen and (max-width:600px){
+  main{
+    width: 100vw;
+    padding:5px;
+    justify-content: flex-start;
+  }
+  .grid{
+    margin: 0;
+    gap: 7px;
+  }
+  .card{
+    width:100%;
+    max-width: 70px;
+    height: 120px;
+  }
+}
